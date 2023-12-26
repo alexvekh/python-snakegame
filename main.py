@@ -10,6 +10,18 @@ red = (213, 50, 80)
 green = (0, 255, 0)
 blue = (50, 153, 213)
 
+dark_green = (2, 77, 7)
+light_yellow = (239, 239, 173)
+light_blue = (204, 255,255)
+grey = (160, 160, 160)
+orange = (255, 153, 51)
+
+field_color = dark_green
+food_color = grey
+snake_color = orange
+
+
+
 dis_width = 600
 dis_height = 400
 
@@ -18,7 +30,7 @@ pygame.display.set_caption("Snake game")
 
 def draw_snake(snake_block, snake_list):
     for element in snake_list:
-        pygame.draw.rect(dis, black, [element[0], element[1], snake_block, snake_block])
+        pygame.draw.rect(dis, snake_color, [element[0], element[1], snake_block, snake_block])
 
 def game_loop():
     game_over = False
@@ -67,9 +79,9 @@ def game_loop():
 
 
 
-        dis.fill(blue)
+        dis.fill(field_color)
 
-        pygame.draw.rect(dis, green, [foodx, foody, snake_block, snake_block])
+        pygame.draw.rect(dis, food_color, [foodx, foody, snake_block, snake_block])
 
         snake_head = []
         snake_head.append(x1)
